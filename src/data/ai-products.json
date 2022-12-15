@@ -1,0 +1,76 @@
+{
+	"products": [
+		{
+			"name": "Magic Eraser",
+			"description": "A cleaning product that can be used to remove tough stains and marks from a variety of surfaces.",
+			"tags": ["cleaning", "stains", "marks"],
+			"image": "/img/land-1.jpg"
+		},
+		{
+			"name": "AirPods",
+			"description": "Wireless earbuds that can be used with a variety of devices, including iPhones and iPads.",
+			"tags": ["wireless", "earbuds", "music"],
+			"image": "/img/airpods.jpg"
+		},
+		{
+			"name": "Fitbit",
+			"description": "A line of wearable fitness trackers that can be worn on the wrist to track activity levels and monitor health data.",
+			"tags": ["fitness", "health", "wearable"],
+			"image": "/img/fitbit.jpg"
+		},
+		{
+			"name": "Instant Pot",
+			"description": "An electric pressure cooker that can be used to quickly and easily prepare a wide range of meals.",
+			"tags": ["cooking", "electric", "cooker"],
+			"image": "/img/instant-pot.jpg"
+		},
+		{
+			"name": "Swiss Army Knife",
+			"description": "A multi-tool that is designed to be compact and versatile, with a variety of implements for different tasks.",
+			"tags": ["multi-tool", "compact", "versatile"],
+			"image": "/img/swiss-army-knife.jpg"
+		},
+		{
+			"name": "Roomba",
+			"description": "A line of robotic vacuum cleaners that can be used to automatically clean floors in a home or office.",
+			"tags": ["robot", "vacuum", "cleaning"],
+			"image": "/img/roomba.jpg"
+		},
+		{
+			"name": "Google Home",
+			"description": "A line of smart speakers that can be used to control a variety of smart home devices and access a wide range of online services.",
+			"tags": ["smart", "speaker", "home automation"],
+			"image": "/img/google-home.jpg"
+		},
+		{
+			"name": "Amazon Echo",
+			"description": "A line of smart speakers that can be used to control a variety of smart home devices and access a wide range of online services.",
+			"tags": ["smart", "speaker", "home automation"],
+			"image": "/img/amazon-echo.jpg"
+		},
+		{
+			"name": "Microsoft Surface",
+			"description": "A line of tablets and laptop computers that are designed to be versatile and powerful.",
+			"tags": ["tablet", "laptop", "versatile"],
+			"image": "/img/microsoft-surface.jpg"
+		},
+		{
+			"name": "Apple Watch",
+			"description": "A line of smartwatches that can be used to track fitness and health data, receive notifications from a connected smartphone, and perform a variety of other tasks.",
+			"tags": ["smartwatch", "fitness", "health"],
+			"image": "/img/apple-watch.jpg"
+		},
+		{
+			"name": "Nest Thermostat",
+			"description": "A smart thermostat that can be used to control the temperature in a home or office.",
+			"tags": ["smart", "thermostat", "temperature"],
+			"image": "/img/nest-thermostat.jpg"
+		},
+		{
+			"name": "Kindle",
+			"description": "An electronic device that can be used to read books, magazines, and other digital content.",
+			"tags": ["electronic", "reading", "books"],
+			"image": "/img/kindle.jpg"
+		}
+	]
+}
