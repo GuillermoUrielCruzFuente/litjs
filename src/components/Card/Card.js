@@ -1,8 +1,8 @@
-import { LitElement, html, css } from "lit-element";
+import { LitElement, html } from "lit-element";
+import { cardStyles } from "./CardStyles";
 import "@/components/ImageContainer";
 import "@/components/Chip";
 import "@/components/Button";
-import { cardStyles } from "@/components/Card/CardStyles";
 
 export class Card extends LitElement {
 	static get properties() {
