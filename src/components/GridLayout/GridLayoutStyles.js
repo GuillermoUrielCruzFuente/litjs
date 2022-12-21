@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export const styles = css`
+export const gridLayoutStyles = css`
 	section {
 		display: grid;
 		grid-auto-rows: auto;

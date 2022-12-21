@@ -1,9 +1,9 @@
-import { LitElement, html, css } from "lit-element";
-import { styles } from "@/components/GridLayout/GridLayoutStyles";
+import { LitElement, html } from "lit-element";
+import { gridLayoutStyles } from "./GridLayoutStyles";
 
 export class GridLayout extends LitElement {
 	static get styles() {
-		return [styles];
+		return gridLayoutStyles;
 	}
 
 	render() {
