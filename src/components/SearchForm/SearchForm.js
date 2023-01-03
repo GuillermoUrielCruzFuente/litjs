@@ -30,7 +30,7 @@ class SearchForm extends LitElement {
 		const nameInput = this.shadowRoot.querySelector("#name");
 		const searchTerm = nameInput.value;
 
-		this.searcher.func(searchTerm);
+		this.searcher.search(searchTerm);
 	}
 
 	render() {
