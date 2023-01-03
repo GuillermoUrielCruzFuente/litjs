@@ -57,6 +57,7 @@ export const cardStyles = css`
 	}
 
 	button-lit {
+		width: 100%;
 		margin-top: auto;
 	}
 `;
