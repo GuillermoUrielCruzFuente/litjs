@@ -32,9 +32,3 @@ export const buttonStyles = css`
 		border: dashed 2px #999;
 	}
 `;
-
-/**
- * @TODO
- * importar la clase de manera dinámica
- * con valores ternarios
- */
