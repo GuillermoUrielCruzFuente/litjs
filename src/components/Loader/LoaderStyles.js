@@ -1,20 +1,23 @@
 import { css } from "lit-element";
 
 export const loaderStyles = css`
+	:host {
+		--wave-height: 1.5px;
+		--dot-size: 10px;
+	}
+
 	#loader-container {
 		display: flex;
 		flex-flow: row nowrap;
-		background-color: crimson;
-		padding: 0.5rem 1rem;
-		gap: 0.25rem;
+		gap: 0.5rem;
 	}
 
 	#loader-container > div {
-		width: 8px;
-		height: 8px;
-		border-radius: 4px;
+		width: var(--dot-size);
+		height: var(--dot-size);
+		border-radius: var(--dot-size);
 		background-color: #fff;
-		animation: UpAndDown 400ms infinite alternate;
+		animation: dot 350ms alternate infinite;
 		animation-timing-function: cubic-bezier(0.5, 0.08, 0.53, 0.95);
 	}
 
@@ -26,15 +29,14 @@ export const loaderStyles = css`
 		animation-delay: 200ms;
 	}
 
-	@keyframes UpAndDown {
-		0% {
-			transform: translateY(0px);
+	@keyframes dot {
+		from {
+			transform: translateY(calc(var(--wave-height) * -1));
+			background-color: #999;
 		}
-		33% {
-			transform: translateY(-5px);
-		}
-		100% {
-			transform: translateY(5px);
+		to {
+			transform: translateY(var(--wave-height));
+			background-color: #555;
 		}
 	}
 `;
