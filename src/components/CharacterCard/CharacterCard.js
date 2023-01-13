@@ -1,5 +1,6 @@
 import { LitElement, html } from "lit-element";
 import { characterCardStyles } from "./CharacterCardStyles";
+import getNestedData from "@/utils/functions/GetNestedData";
 import "@/components/ImageContainer";
 import "@/components/TitleLabel";
 
@@ -12,17 +13,62 @@ class CharacterCard extends LitElement {
 
 	constructor() {
 		super();
+
+		//property from attribute, initial value as an empty object
 		this.characterInfo = {};
+
+		//MUST contain the selected object keys
+		//to show in the character card
+		this.showedData = [
+			"type",
+			"id",
+			"species",
+			"status",
+			"gender",
+			["origin", "name"],
+			["location", "name"],
+		];
 	}
 
 	static get styles() {
 		return characterCardStyles;
 	}
 
-	get infoType() {
-		return this.characterInfo.type === ""
-			? "Not registered"
-			: this.characterInfo.type;
+	#avoidEmptyString(data) {
+		if (data === "" || data === undefined) {
+			return "not registered";
+		}
+		return data;
+	}
+
+	#generateNestedPropertyLabel(datum) {
+		const text = getNestedData({
+			object: this.characterInfo,
+			properties: datum,
+		});
+
+		return html`
+			<title-label topic="${datum[0]}" text="${text}"></title-label>
+		`;
+	}
+
+	#generateSinglePropertyLabel(datum) {
+		const rawText = this.characterInfo?.[datum];
+		const text = this.#avoidEmptyString(rawText);
+
+		return html`
+			<title-label topic="${datum}" text="${text}"></title-label>
+		`;
+	}
+
+	#generateInfoLabels() {
+		return this.showedData.map((datum) => {
+			if (datum instanceof Array) {
+				return this.#generateNestedPropertyLabel(datum);
+			}
+
+			return this.#generateSinglePropertyLabel(datum);
+		});
 	}
 
 	render() {
@@ -44,40 +90,7 @@ class CharacterCard extends LitElement {
 					<h1>${this.characterInfo.name}</h1>
 
 					<div class="tags-container">
-						<title-label
-							topic="type"
-							text="${this.infoType}"
-						></title-label>
-
-						<title-label
-							topic="id"
-							text="${this.characterInfo.id}"
-						></title-label>
-
-						<title-label
-							topic="species"
-							text="${this.characterInfo.species}"
-						></title-label>
-
-						<title-label
-							topic="status"
-							text="${this.characterInfo.status}"
-						></title-label>
-
-						<title-label
-							topic="gender"
-							text="${this.characterInfo.gender}"
-						></title-label>
-
-						<title-label
-							topic="origin"
-							text="${this.characterInfo.origin.name}"
-						></title-label>
-
-						<title-label
-							topic="location"
-							text="${this.characterInfo.location.name}"
-						></title-label>
+						${this.#generateInfoLabels()}
 					</div>
 				</div>
 			</article>
