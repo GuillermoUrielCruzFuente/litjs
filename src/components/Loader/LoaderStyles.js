@@ -7,6 +7,9 @@ export const loaderStyles = css`
 	}
 
 	#loader-container {
+		width: fit-content;
+		height: fit-content;
+
 		display: flex;
 		flex-flow: row nowrap;
 		gap: 0.5rem;
