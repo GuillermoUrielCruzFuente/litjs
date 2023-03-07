@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
-import * as path from "path";
 import * as dns from "dns";
+import { resolve } from "path";
 
 dns.setDefaultResultOrder("verbatim");
 
@@ -13,7 +13,15 @@ export default defineConfig({
 	},
 	resolve: {
 		alias: {
-			"@": path.resolve(__dirname, "./src"),
+			"@": resolve(__dirname, "./src"),
+		},
+	},
+	build: {
+		rollupOptions: {
+			input: {
+				main: resolve(__dirname, "index.html"),
+				rick: resolve(__dirname, "./pages/rick.html"),
+			},
 		},
 	},
 });
