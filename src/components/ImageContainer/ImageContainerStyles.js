@@ -16,7 +16,7 @@ export const imageContainerStyles = css`
 		width: 100%;
 
 		aspect-ratio: var(--figure-aspect-ratio, 16/9);
-		border-radius: var(--border-radius, 0)
+		border-radius: var(--border-radius, 0);
 	}
 
 	img {
@@ -29,5 +29,16 @@ export const imageContainerStyles = css`
 
 	figure:hover > img {
 		transform: scale(1.1);
+	}
+
+	#loader-container {
+		position: absolute;
+		background-color: #000;
+		width: 100%;
+		height: 100%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 `;

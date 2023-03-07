@@ -5,13 +5,35 @@ export class ImageContainer extends LitElement {
 	static get properties() {
 		return {
 			src: { type: String },
+			loaded: { type: Boolean, attribute: false },
 		};
 	}
+	/**
+	 * TODO
+	 * create a custom setter
+	 * in order to invoke a handler
+	 * function that initialize the
+	 * swap between images
+	 */
 
+	/**
+	 * get the new src link
+	 * initizalize a new image object
+	 * and load the new src by setting that attribute
+	 * implement onLoad function to change between
+	 * 		1: transition the loader background from opacity 0 to 1
+	 * 		2: when transition ends, change the img src attribute
+	 * 		3: transition the loader background from opacity 1 to 0
+	 */
 	constructor() {
 		super();
-		this.src = "/public/img/land-1.jpg";
 
+		//reactive property, MUST contain the src value for the img tag
+		this.src = "";
+
+		this.loaded = false;
+
+		//Listen for every src attribute change
 		this.srcObserver = new MutationObserver(
 			this.#srcObserverCallback.bind(this)
 		);
@@ -40,16 +62,18 @@ export class ImageContainer extends LitElement {
 		return this.shadowRoot.querySelector("img");
 	}
 
-	/**
-	 * this method is called every time a img finish
-	 * its src loading
-	 */
-	handleLoad() {
-		console.log("loading complete");
+	get #loader() {
+		return this.shadowRoot.querySelector("#loader-container");
+	}
+
+	loadCompleted() {
+		this.loaded = true;
+		this.#loader.style.visibility = "hidden";
 	}
 
 	handleLoadStart() {
-		console.log("loading init");
+		this.loaded = false;
+		this.#loader.style.visibility = "visible";
 	}
 
 	render() {
@@ -58,8 +82,12 @@ export class ImageContainer extends LitElement {
 				<img
 					src="${this.src}"
 					loading="lazy"
-					@load=${this.handleLoad}
+					@load="${this.loadCompleted}"
 				/>
+
+				<div id="loader-container">
+					<loader-element></loader-element>
+				</div>
 			</figure>
 		`;
 	}
