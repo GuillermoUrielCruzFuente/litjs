@@ -1,7 +1,16 @@
+## Clone repo
+
+clone this repository by runnig the following command:
+
+`git clone https://github.com/GuillermoCruzFuente/litjs.git`
+
+then
+
+`cd litjs && npm install`
+
 ## Run dev server
 
-run the following command
-`	npm run dev`
+run the following command `npm run dev`
 
 ## Create build assets
 
