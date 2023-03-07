@@ -20,4 +20,6 @@ run the following command `npm run dev`
 
 ## Deploy
 
-This project is online, check [here](https://lit-rick.onrender.com)
+This project is online, check [here](https://lit-rick.onrender.com).
+
+The Rick and Morty API page is [here](https://lit-rick.onrender.com/pages/rick.html)
