@@ -1,5 +1,8 @@
 import { LitElement } from "lit-element";
 
+// check this in order to understand this import
+// https://vitejs.dev/guide/assets.html
+import productsPath from "@/data/ai-products.json?url";
 export class GetProducts extends LitElement {
 	static get properties() {
 		return {};
@@ -53,8 +56,7 @@ export class GetProducts extends LitElement {
 	}
 
 	generateRequest() {
-		
-		fetch("src/data/ai-products.json")
+		fetch(productsPath)
 			.then((response) => response.json())
 			.then((data) => {
 				this._handleSuccessResponse(data);
