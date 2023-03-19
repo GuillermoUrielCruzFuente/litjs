@@ -1,5 +1,6 @@
 import { LitElement, html } from "lit-element";
 import { imageContainerStyles } from "./ImageContainerStyles";
+import "@/components/Loader";
 
 export class ImageContainer extends LitElement {
 	static get properties() {

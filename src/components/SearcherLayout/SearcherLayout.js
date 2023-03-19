@@ -1,7 +1,6 @@
 import { LitElement, html } from "lit-element";
 import { searcherLayoutStyles } from "./SearcherLayoutStyles";
 import "@/components/ListViewer";
-import "@/components/Loader";
 
 /**
  * `searcher-layout` Show a list of results with a search bar and a selected item
