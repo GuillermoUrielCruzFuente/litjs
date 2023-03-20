@@ -2,25 +2,58 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<!-- #region Fonts -->
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;900&display=swap"
 			rel="stylesheet"
 		/>
-
-		<title>LitElement V2.5.1</title>
+		<!-- #endregion -->
+		<title>LitBasics</title>
 	</head>
 	<body>
-		<section>
-			<link-lit href="/pages/rick.html">
-				rick and morty - api
-			</link-lit>
-		</section>
+		<header-element>
+			<h1 slot="logo">LitBasics</h1>
+
+			<header-items-container-element slot="nav">
+				<link-lit
+					href="/pages/rick.html"
+					slot="nav-item"
+				>
+					rick and morty - api
+				</link-lit>
+
+				<link-lit
+					href="/"
+					slot="nav-item"
+				>
+					home
+				</link-lit>
+			</header-items-container-element>
+		</header-element>
+
 		<cards-layout></cards-layout>
-		<script type="module" src="/src/index.js"></script>
+
+		<script
+			type="module"
+			src="/src/index.js"
+		></script>
 	</body>
 </html>
