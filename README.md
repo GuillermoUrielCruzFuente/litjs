@@ -1,25 +1,48 @@
-## Clone repo
+# LitElement Basics
 
-clone this repository by runnig the following command:
+## Set up your local repository
 
-`git clone https://github.com/GuillermoCruzFuente/litjs.git`
+Clone this repository by runnig the following command:
 
-then
+-   `git clone https://github.com/GuillermoUrielCruzFuente/litjs.git`
 
-`cd litjs && npm install`
+Then, get into the generated folder and install the dependencies:
 
-## Run dev server
+-   `cd litjs && npm install`
 
-run the following command `npm run dev`
+## Run the dev server
 
-## Create build assets
+<a href="" target="_blank"></a>
 
--   run the following command: `npm run build`
+In order to execute the development server run the following command `npm run dev`.
 
--   you can check this build by runing the following command: `npm run preview`
+This project use <a href="https://vitejs.dev/" target="_blank">vite</a> as bundler. If you have any
+doubt about its functionality just read the documentation
+<a href="https://vitejs.dev/guide/" target="_blank">here</a>.
+
+## Generate the build assets
+
+Run the following command:
+
+-   `npm run build`
+
+You can check the generated build by running the following command:
+
+-   `npm run preview`
 
 ## Deploy
 
-This project is online, check [here](https://lit-rick.onrender.com).
+This project is deployed on <a href="https://render.com/" target="_blank">render</a>, you can check
+it out <a href="https://lit-rick.onrender.com" target="_blank">here</a>, also make sure to see the
+Rick and Morty API page
+<a href="https://lit-rick.onrender.com/pages/rick.html" target="_blank">here</a>.
 
-The Rick and Morty API page is [here](https://lit-rick.onrender.com/pages/rick.html)
+## Code format styles
+
+I highly recommend to use the <a href="https://prettier.io/" target="_blank">prettier</a> extension
+and configure your IDE or text editor to format the code on every save (ctrl + s). In Visual Studio
+Code enter the settings and search `format on save` and simply check that option.
+
+In the project root there is a `.prettierrc` file, this file contain the prefered code formatting
+options that will be applied by the extension, that's all you have to do in order to maintain the
+project code formatting standards.
